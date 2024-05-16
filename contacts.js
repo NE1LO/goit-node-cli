@@ -51,7 +51,7 @@ async function addContact(name, email, phone) {
     const newContact = { id: crypto.randomUUID(), name, email, phone };
     contacts.push(newContact);
     await writeContacts(contacts);
-    console.log(newContact);
+    return newContact;
   } catch (error) {
     console.error("Помилка при додаванні контакту", error);
   }
